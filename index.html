@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>21 diner!!!</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<style>
+		html, body{
+			width: 100%;
+			height: 100%;
+			margin: 0;
+            background-color: #98d7dd;
+            color: #fff772;
+		}
+
+		body {
+			display: flex;
+			align-items: stretch;
+		}
+
+		.invite {
+			text-align: center;
+			display: flex;
+			flex-direction: column;
+			justify-content: center;
+			padding: 50px;
+			height: 50%;
+		}
+
+		.invite h3 {
+			text-align: start;
+		}
+
+		#arrows {
+			width: 100px;
+			position: absolute;
+			right: 15px;
+			bottom: 15px;
+		}
+
+		canvas {
+			width: 100%;
+			height: 50%;
+		}
+
+		.top-container {
+			display: flex;
+			flex-direction: column;
+			justify-content: space-between;
+			align-items: center;
+			width: 100%;
+		}
+
+		.saved {
+			display: none;
+		}
+	</style>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+
+</head>
+<body>
+<div class="top-container">
+	<div class="invite">
+		<h1>Save the Date!</h1>
+		<h2 class="saved">Marijns 21 Diner</h2>
+		<h3 class="saved">Datum: 7 mei <br>
+			Dresscode: Whatever floats your boat!<br>
+			Details: Komen later wel over de mail :)</h3>
+	</div>
+	<canvas id="sea"></canvas>
+	<img id="arrows" src="img/arrows.png">
+</div>
+</body>
+<script src="js/states/State.js"></script>
+<script src="js/states/GameState.js"></script>
+<!--<script src="js/states/GameOverState.js"></script>-->
+<script src="js/Canvas.js"></script>
+<script src="js/KeyInput.js"></script>
+<script src="js/GameObject.js"></script>
+<script src="js/Boat.js"></script>
+<script src="js/SaveDate.js"></script>
+<script src="js/Game.js"></script>
+<script src="js/main.js"></script>
+</html>
