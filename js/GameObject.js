@@ -13,6 +13,7 @@ class GameObject {
 	}
 
 	keyDown(e) {}
+	touchDown(e) {}
 
 	reset() {
 		this.pos.x = this.startPos.x;
@@ -55,9 +56,15 @@ class Movement {
 		this.y = this.y/newSpeed*speed;
 	}
 
-	/**
-	 *
-	 */
+	setDirection(x, y, speed = 0) {
+		if(speed === 0) {
+			speed = this.getSpeed();
+		}
+		let normalizedDir = new Movement(x, y).getDirection();
+		this.x = normalizedDir.x * speed;
+		this.y = normalizedDir.y * speed;
+	}
+
 	getAngle() {
 		return Math.acos(this.x/this.getSpeed());
 	}

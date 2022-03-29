@@ -20,15 +20,9 @@ class SaveDate extends GameObject {
 		this.isSaved = true;
 	}
 
-	checkCollide() {
-	}
-
 	draw() {
 		if(!this.isSaved && this.imageLoaded) {
 			this.canvas.drawImg(this.pos.x, this.pos.y, this.image);
 		}
-	}
-
-	keyDown(keys) {
 	}
 }

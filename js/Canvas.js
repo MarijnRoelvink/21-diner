@@ -28,7 +28,7 @@ class Canvas {
 
 	drawBackground() {
 		if(this.imageLoaded) {
-			this.drawImg(0, 0, this.background);
+			this.ctx.drawImage(this.background, 0, 0, this.getWidth(), this.getHeight())
 		}
 	}
 

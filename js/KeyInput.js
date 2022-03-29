@@ -2,7 +2,9 @@ class KeyInput {
 	constructor(objects) {
 		this.objects = objects;
 		this.keysPressed = [];
+		this.touchEvent = null;
 		this.registerKeyPress();
+		this.registerTouch();
 		this.listening = false;
 	}
 
@@ -29,7 +31,23 @@ class KeyInput {
 		});
 	}
 
+	registerTouch() {
+		document.addEventListener('touchstart', (e) => {
+			this.touchEvent = e.touches[0];
+		});
+		document.addEventListener('touchend', (e) => {
+			this.touchEvent = null;
+		});
+		document.addEventListener('touchcancel', (e) => {
+			this.touchEvent = null;
+		});
+		document.addEventListener('touchmove', (e) => {
+			this.touchEvent = e.changedTouches[0];
+		});
+	}
+
 	updateObjects() {
 		this.objects.forEach(o => o.keyDown(this.keysPressed));
+		this.objects.forEach(o => o.touchDown(this.touchEvent));
 	}
 }

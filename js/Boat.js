@@ -70,4 +70,16 @@ class Boat extends GameObject {
 			this.mov.y = 0;
 		}
 	}
+
+	touchDown(e) {
+		if(e !== null) {
+			let center = new Position($(".top-container").prop("clientWidth")/2, $(".top-container").prop("clientHeight")/2);
+			this.mov.setDirection(e.pageX - center.x, e.pageY - center.y, this.game.SPEED);
+			this.changed = true;
+		}
+		else {
+			this.mov.x = 0;
+			this.mov.y = 0;
+		}
+	}
 }

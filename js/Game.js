@@ -6,7 +6,7 @@ class Game {
 		this.canvas = new Canvas(id);
 		this.running = false;
 		let saveDate = new SaveDate("date", {x: this.canvas.getWidth()*0.8, y: this.canvas.getHeight()*0.2, dx: 0, dy: 0}, this);
-		this.objects = [saveDate, new Boat("boat", {x: 50, y: 50, dx: 0, dy: 0}, this, saveDate)];
+		this.objects = [saveDate, new Boat("boat", {x: 50, y: this.canvas.getHeight()*0.2, dx: 0, dy: 0}, this, saveDate)];
 		this.gameState = new GameState(this);
 		this.currentState = this.gameState;
 	}
