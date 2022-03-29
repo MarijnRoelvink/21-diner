@@ -6,6 +6,7 @@ class KeyInput {
 		this.registerKeyPress();
 		this.registerTouch();
 		this.listening = false;
+		this.mobileSetting = false;
 	}
 
 	start() {
@@ -34,6 +35,7 @@ class KeyInput {
 	registerTouch() {
 		document.addEventListener('touchstart', (e) => {
 			this.touchEvent = e.touches[0];
+			this.mobileSetting = true;
 		});
 		document.addEventListener('touchend', (e) => {
 			this.touchEvent = null;
@@ -47,7 +49,10 @@ class KeyInput {
 	}
 
 	updateObjects() {
-		this.objects.forEach(o => o.keyDown(this.keysPressed));
-		this.objects.forEach(o => o.touchDown(this.touchEvent));
+		if(this.mobileSetting) {
+			this.objects.forEach(o => o.touchDown(this.touchEvent));
+		} else {
+			this.objects.forEach(o => o.keyDown(this.keysPressed));
+		}
 	}
 }
