@@ -1,5 +1,3 @@
-# Curve-Frenzy
+# 21 Dinner Invite
 
-Hi, this was a nice project while I was in quarantine during Christmas, a tribute to the original Curve Fever game where you could still play with six people on the same keyboard. 
-
-Feel free to contribute!
+This is a very silly website to save the date
